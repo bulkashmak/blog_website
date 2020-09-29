@@ -1,0 +1,61 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Roboto+Mono:wght@300&family=Roboto:wght@700&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+header {
+    padding: 10px 5%;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    background-color: #201233;
+        
+    align-items: center;
+}
+
+.logo {
+    grid-row: 1;
+    font-family: 'Monoton', cursive;
+}
+
+.logo a{
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+}
+
+.nav_links {
+    display: grid;
+    grid-template-columns: 80px 80px;
+    justify-content: end;
+    grid-row: 2;
+    list-style: none;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav_links li, a {
+    font-size: 14px;
+    color: white;
+    justify-content: end;
+    
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+    color: #a064ef;
+}
+
+body {
+    background-color: white;
+    font-family: 'Roboto mono', monospace;
+}
+
+.content {
+    padding: 20px 5%;
+}

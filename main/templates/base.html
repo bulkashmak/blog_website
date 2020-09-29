@@ -1,8 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="{% static 'base.css' %}">
     <title>
         {% block title %}
         Home page
@@ -11,13 +13,19 @@
 </head>
 <body>
     <header>
-        <h1 class="logo">Bulkashmak</h1>
-        <ul class="menu">
-            <li><a href="{% url 'home_page' %}">Домашняя страница</a></li>
-            <li><a href="{% url 'about_page' %}">Страница обо мне</a></li>
-        </ul>
+        <div class="logo">
+            <a href="https://github.com/bulkashmak">bulkashmak</a>
+        </div>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="{% url 'home_page' %}">home</a></li>
+                <li><a href="{% url 'about_page' %}">about</a></li>
+            </ul>
+        </nav>
     </header>
-    {% block content %}
-    {% endblock content %}
+    <div class="content">
+        {% block content %}
+        {% endblock content %}
+    </div>
 </body>
 </html>
