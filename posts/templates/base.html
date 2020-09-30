@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="{% static 'base.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/base.css' %}">
     <title>
         {% block title %}
         Home page
@@ -14,18 +14,24 @@
 <body>
     <header>
         <div class="logo">
-            <a href="https://github.com/bulkashmak">bulkashmak</a>
+            <a href="{% url 'home_page' %}">bulkashmak</a>
         </div>
         <nav>
             <ul class="nav_links">
-                <li><a href="{% url 'home_page' %}">home</a></li>
+                <li><a href="{% url 'posts_page' %}">posts</a></li>
                 <li><a href="{% url 'about_page' %}">about</a></li>
             </ul>
         </nav>
     </header>
+    <div class="semi-header">
+        <p>{{ title }}</p>
+    </div>
     <div class="content">
         {% block content %}
         {% endblock content %}
     </div>
+    <footer>
+        <p>© Bulkashmak</p>
+    </footer>
 </body>
 </html>
