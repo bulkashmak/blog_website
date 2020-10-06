@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Monoton&family=Roboto:wght@300;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Roboto:wght@300;400;500;700&display=swap');
 
 * {
   padding: 0px;
@@ -29,11 +29,16 @@ header {
   text-decoration: none;
 }
 
+nav {
+  display: grid;
+  grid-template-columns: auto 70px;
+}
+
 .nav_links {
   display: grid;
-  grid-template-columns: 80px 80px;
+  grid-template-columns: 80px 80px 80px;
+  align-content: center;
   justify-content: end;
-  grid-column: 2;
   list-style: none;
   text-transform: uppercase;
   font-family: "Roboto", sans-serif;
@@ -51,6 +56,28 @@ header {
 
 .nav_links li a:hover {
   color: #a064ef;
+}
+
+.log-inout {
+  background-color: #b9b9b9;
+  padding: 4px;
+  border: solid 2px white;
+  border-radius: 5px;
+  transition: all 0.3s ease 0s;
+}
+
+.log-inout:hover {
+  background-color: white;
+}
+
+.log-inout > a {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  align-content: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
 }
 
 .semi-header {
@@ -91,8 +118,8 @@ footer p {
 }
 
 body {
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: white;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
 }
@@ -115,7 +142,7 @@ body {
 
 .sidebar {
   grid-column: 2;
-  background-color: rgb(50, 50, 50);
+  background-color: #dfdfdf;
 }
 
 .about_page {
@@ -149,9 +176,9 @@ body {
 }
 
 .post {
-  background-color: rgb(51, 51, 51);
-  min-height: auto;
-  max-height: 300px;
+  background-color: #dfdfdf;
+  min-height: 100px;
+  max-height: 500px;
   display: grid;
   grid-template-rows: 30px auto 40px;
   grid-gap: 5px;
@@ -171,14 +198,14 @@ body {
 
 .post > .author {
   padding-top: 18px;
-  color: darkgray;
+  color: #585858;
   font-size: 15px;
 }
 
 .author a {
-  color: #c59bdf;
+  color: #a62ff0;
   font-style: italic;
-  font-size: 15px;
+  font-size: 16px;
   text-transform: capitalize;
   text-decoration: none;
 }
