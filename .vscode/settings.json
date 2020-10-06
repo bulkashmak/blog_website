@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/Users/bulkashmak/.local/share/virtualenvs/my-first-website_project-l5OgHotH/bin/python",
+    "python.pythonPath": "C:\\Users\\Bulat\\.virtualenvs\\my-first-website_project-ibCoAaaU\\Scripts\\python.exe",
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
     "python.linting.enabled": true
