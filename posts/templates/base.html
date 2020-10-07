@@ -20,7 +20,7 @@
         </ul>
         <div class="log-inout">
           {% if user.is_authenticated %}
-            <a href="#">Log-out</a>
+            <a href="{% url 'account_details' %}">Account</a>
           {% else %}
             <a href="{% url 'login' %}">Log-in</a>
           {% endif %}

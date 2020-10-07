@@ -7,11 +7,11 @@ def home_page(request):
         'title': 'Home',
     }
 
-    return render(request, 'base.html', context)
+    return render(request, 'posts/home.html', context)
 
 
 def posts_page(request):
-    posts = Post.objects.order_by('created')
+    posts = Post.objects.order_by('-created')
 
     context = {
         'title': 'Posts',
