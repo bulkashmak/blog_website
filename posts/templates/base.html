@@ -18,17 +18,21 @@
           <li><a href="{% url 'posts_page' %}">posts</a></li>
           <li><a href="{% url 'about_page' %}">about</a></li>
         </ul>
-        <div class="log-inout">
+        <div>
           {% if user.is_authenticated %}
-            <a href="{% url 'account_details' %}">Account</a>
+            <a href="{% url 'account_details' %}"><button class="log-inout">Account</button></a>
           {% else %}
-            <a href="{% url 'login' %}">Log In</a>
+            <a href="{% url 'login' %}"><button class="log-inout">Log In</button></a>
           {% endif %}
         </div>
       </nav>
     </header>
     <div class="semi-header">
-      <p>{{ title }}</p>
+      <p>
+        {% block semi_header %}
+        {{ title }}
+        {% endblock semi_header %}
+      </p>
     </div>
     <div class="wrapper">
       <div class="content">{% block content %} {% endblock content %}</div>

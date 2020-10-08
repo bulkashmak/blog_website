@@ -22,7 +22,7 @@ class Post(models.Model):
     )
     status = models.IntegerField(verbose_name="Status of the post",
                                  choices=STATUS,
-                                 default=0)
+                                 default=1)
 
     class Meta:
         ordering = ["-created"]
