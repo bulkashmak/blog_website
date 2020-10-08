@@ -213,3 +213,42 @@ body {
 .author a:hover {
   text-decoration: underline;
 }
+
+.log-button {
+  /* width: 80px; */
+  background-color: #dfdfdf;
+  border: solid 2px black;
+  border-radius: 5px;
+  color: black;
+  padding: 4px 5px;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease 0s;
+}
+
+.log-button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.login-table {
+  margin-bottom: 5px;
+}
+
+input[type=text], input[type=password] {
+  background-color: #dfdfdf;
+  color: black;
+  font-size: 16px;
+  width: 100px;
+  padding: 4px 4px;
+  margin: 2px 2px;
+  border: solid 1px black;
+  border-radius: 3px;
+  transition: all 0.3s ease 0s;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  width: 150px;
+}

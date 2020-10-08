@@ -24,7 +24,7 @@ Login
     <form method="post" action="{% url 'login' %}">
         {% csrf_token %}
 
-        <table>
+        <table class="login-table">
             <tr>
                 <td>{{ form.username.label_tag }}</td>
                 <td>{{ form.username }}</td>
@@ -35,12 +35,14 @@ Login
             </tr>
         </table>
 
-        <input type="submit" value="login" />
+        <input class="log-button" type="submit" value="login" />
         <input type="hidden" value="{{ next }}" name="next" />
     </form>
+    <br />
 
     <p>
-        If u don't have an account, you can register <a href="{% url 'register' %}">Here</a>.
+        If u don't have an account, you can: 
+        <a href="{% url 'register' %}"><button class="log-button" type="button">register</button></a>
     </p>
 
 {% endblock content %}

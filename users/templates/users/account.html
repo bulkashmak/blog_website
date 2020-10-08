@@ -5,6 +5,9 @@
 {% endblock title %}
 
 {% block content %}
+<div class="account">
     <h3>Hello, {{ user.username }}.</h3>
-    <p><a href='{% url 'logout' %}'>Log Out</a></p>
+    <br>
+    <a href="{% url 'logout' %}"><button class="log-button" type="button">Log Out</button></a>
+</div>
 {% endblock content %}
