@@ -10,7 +10,9 @@ class Post(models.Model):
     author = models.ForeignKey(User,
                                on_delete=models.CASCADE,
                                related_name='blog_posts',
-                               default=None)
+                               default=None,
+                               null=True,
+                               blank=True)
     content = models.TextField()
     created = models.DateTimeField(verbose_name="When the post was created",
                                    auto_now=True)

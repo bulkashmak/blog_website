@@ -1,6 +1,8 @@
-from django.shortcuts import render
-from .models import Post
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+
+from .models import Post
+from .forms import CreatePost
 
 
 def home_page(request):
@@ -32,10 +34,27 @@ def about_page(request):
 
 
 @login_required(login_url='registration/login.html')
-def new_post_page(request):
+def create_post_page(request):
+
+    if request.method == "POST":
+        form = CreatePost(request.POST)
+
+        if form.is_valid():
+            f_title = form.cleaned_data["title"]
+            f_content = form.cleaned_data["content"]
+            f_status = form.cleaned_data["status"]
+            new_post = Post(title=f_title,
+                            content=f_content,
+                            status=f_status)
+            new_post.save()
+
+            return redirect('posts_page')
+    else:
+        form = CreatePost()
 
     context = {
         'title': 'New Post',
+        'form': form,
     }
 
-    return render(request, 'posts/new_post.html', context)
+    return render(request, 'posts/create_post.html', context)

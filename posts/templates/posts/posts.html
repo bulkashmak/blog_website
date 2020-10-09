@@ -13,4 +13,9 @@
   {% endfor %}
 {% endblock content %}
 {% block sidebar %}
+<div id="posts_sidebar">
+  <a href={% url 'create_post_page' %}>
+    <button class="create_button">Create a post</button>
+  </a>
+</div>
 {% endblock sidebar %}
