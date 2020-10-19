@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 
+from posts.models import Post
+
 
 def register(request):
     """
@@ -10,7 +12,7 @@ def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
 
-        if form.is_valid:
+        if form.is_valid():
             form.save()
             username = form.cleaned_data['username']
             password = form.cleaned_data['password1']
@@ -30,8 +32,11 @@ def register(request):
 
 
 def account_details(request):
+    posts = Post.objects.filter(author=request.user)
+
     context = {
         'title': 'Account',
+        'posts': posts.order_by('-created'),
     }
 
     return render(request, 'users/account.html', context)

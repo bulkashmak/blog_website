@@ -9,10 +9,10 @@
         {% csrf_token %}
 
         {% if form.errors %}
-            <p>The input is incorrect</p>
+            <p>The input is incorrect</p><hr><br>
         {% endif %}
 
-        {{ form }}
+        {{ form.as_p }}
 
         <input class="log-button" type="submit" value="register" />
     </form>
