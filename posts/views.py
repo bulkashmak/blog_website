@@ -37,6 +37,7 @@ def about_page(request):
 def create_post_page(request):
 
     if request.method == "POST":
+        # author = Post(author=request.user)
         form = CreatePost(request.POST)
 
         if form.is_valid():
@@ -45,7 +46,8 @@ def create_post_page(request):
             f_status = form.cleaned_data["status"]
             new_post = Post(title=f_title,
                             content=f_content,
-                            status=f_status)
+                            status=f_status,
+                            author=request.user)
             new_post.save()
 
             return redirect('posts_page')

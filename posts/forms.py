@@ -1,6 +1,5 @@
 from django import forms
 from .models import Post
-from django.contrib.auth.models import User
 
 
 class CreatePost(forms.ModelForm):
@@ -10,7 +9,6 @@ class CreatePost(forms.ModelForm):
     #                           required=False)
     # status = forms.BooleanField(label='Publish',
     #                             required=False)
-    author = User
 
     class Meta:
         model = Post

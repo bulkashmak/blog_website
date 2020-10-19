@@ -6,13 +6,11 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100,
                             null=False,
-                            unique=True)
+                            unique=False)
     author = models.ForeignKey(User,
                                on_delete=models.CASCADE,
                                related_name='blog_posts',
-                               default=None,
-                               null=True,
-                               blank=True)
+                               default=None)
     content = models.TextField()
     created = models.DateTimeField(verbose_name="When the post was created",
                                    auto_now=True)
