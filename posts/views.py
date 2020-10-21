@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 
 from .models import Post
@@ -35,6 +35,9 @@ def about_page(request):
 
 @login_required(login_url='registration/login.html')
 def create_post_page(request):
+    """
+    Page for making new posts
+    """
 
     if request.method == "POST":
         # author = Post(author=request.user)
@@ -60,3 +63,13 @@ def create_post_page(request):
     }
 
     return render(request, 'posts/create_post.html', context)
+
+
+@login_required(login_url='registration/login.html')
+def delete_post(request, post_id):
+    """
+    Deletes a post with id==post_id
+    """
+    post_obj = get_object_or_404(Post, id=post_id)
+    post_obj.delete()
+    return redirect('account_details')

@@ -238,6 +238,25 @@ aside {
   cursor: pointer;
 }
 
+.delete-btn {
+  background-color: white;
+  border: solid 2px black;
+  border-radius: 5px;
+  color: black;
+  padding: 2px 4px;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease 0s;
+  align-items: center;
+}
+
+.delete-btn:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
 .login-table {
   margin-bottom: 5px;
 }
