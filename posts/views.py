@@ -75,6 +75,35 @@ def delete_post(request, post_id):
     return redirect('account_details')
 
 
+@login_required(login_url='reqistration/login.html')
+def edit_post(request, post_id):
+    """
+    Edit a post that has Draft status
+    """
+    template = 'posts/create_post.html'
+
+    post_obj = get_object_or_404(Post, id=post_id)
+
+    if request.method == "POST":
+        form = CreatePost(request.POST, instance=post_obj)
+
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.save()
+
+            return redirect('account_details')
+    else:
+        form = CreatePost(instance=post_obj)
+
+    context = {
+        'form': form,
+        'title': 'Edit Post'
+    }
+
+    return render(request, template, context)
+
+
 def post_detail(request, post_id):
     template = 'posts/post_detail.html'
 

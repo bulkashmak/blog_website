@@ -22,9 +22,16 @@
                             {% else %} Draft
                             {% endif %}
                     </p>
-                    <a href="{% url 'delete_post' post.id %}">
-                        <button class="delete-btn" type="button">delete</button>
-                    </a>
+                    <p>
+                        <a href="{% url 'delete_post' post.id %}">
+                            <button class="delete-btn" type="button">delete</button>
+                        </a>
+                        {% if post.status == 0 %}
+                            <a href="{% url 'edit_post' post.id %}">
+                                <button class="delete-btn" type="button">edit</button>
+                            </a>
+                        {% endif %}
+                    </p>
                 </div><br>
             {% endfor %}
         </div>
