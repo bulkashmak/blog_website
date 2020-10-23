@@ -208,6 +208,19 @@ aside {
   font-size: 15px;
 }
 
+.post_title a {
+  text-decoration: none;
+  color: #51056e;
+}
+
+.post_title a:hover {
+  text-decoration: underline;
+}
+
+.post_content {
+  font-size: 20px;
+}
+
 .author a {
   color: #a62ff0;
   font-style: italic;

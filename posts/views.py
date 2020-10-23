@@ -73,3 +73,16 @@ def delete_post(request, post_id):
     post_obj = get_object_or_404(Post, id=post_id)
     post_obj.delete()
     return redirect('account_details')
+
+
+def post_detail(request, post_id):
+    template = 'posts/post_detail.html'
+
+    post_obj = get_object_or_404(Post, id=post_id)
+
+    context = {
+        'post': post_obj,
+        'title': post_obj.title,
+    }
+
+    return render(request, template, context)

@@ -122,5 +122,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/account/'
+LOGOUT_REDIRECT_URL = '/account/login/'
+
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: f"users/{u.id}/{u.username}",
+}
