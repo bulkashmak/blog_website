@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block content %}
+<div class="edit_profile">
+    {% if form.errors %}
+        <p>Input is incorrect</p>
+    {% endif %}
+    {% if next %}
+        <p>You don't have access to that page</p>
+    {% endif %}
+    <form method='post'>
+        {% csrf_token %}
+        <h3>Please, use this form to edit your profile info:</h3>
+        <br>
+        {{ form.as_p }}
+        <input type='submit' class='log-button' value='Submit'>
+    </form>
+</div>
+{% endblock content %}

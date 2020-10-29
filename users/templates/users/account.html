@@ -39,5 +39,6 @@
 {% endblock content %}
 
 {% block sidebar %}
-    <a href="{% url 'logout' %}"><button class="create_button" type="button">Log Out</button></a>
+    <p><a href="{% url 'edit_profile' %}"><button class="sidebar_btn" type="button">Edit profile</button></a></p>
+    <p><a href="{% url 'logout' %}"><button class="sidebar_btn" type="button">Log Out</button></a></p>
 {% endblock sidebar %}
