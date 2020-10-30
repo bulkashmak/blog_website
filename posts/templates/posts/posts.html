@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% block title %} {{ title }} {% endblock title %}
 {% block content %}
+  <div class="search_form">
+    <form method="get">
+      <input id="search_bar" type="text" name="q" id="id_q" placeholder="Search...">
+    <form>
+  </div>
   {% for post in posts %}
     {% if post.status == 1 %}
       <div class="post">
@@ -20,3 +25,7 @@
   </a>
 </div>
 {% endblock sidebar %}
+
+<script type="text/javascript">
+  document.getElementById("id_q").value = "{{ query }}"
+</script>
