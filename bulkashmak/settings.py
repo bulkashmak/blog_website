@@ -40,6 +40,8 @@ INSTALLED_APPS = [
 
     'users.apps.UsersConfig',
     'posts.apps.PostsConfig',
+
+    'django_filters',
 ]
 
 MIDDLEWARE = [

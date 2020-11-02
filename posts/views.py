@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.db.models import Q
 
 from .models import Post
 from .forms import CreatePost
+from .filters import PostFilter
 
 
 def home_page(request):
@@ -17,14 +17,13 @@ def home_page(request):
 def posts_page(request):
     posts = Post.objects.order_by('-created')
 
-    query = ""
-    if request.GET:
-        query = request.GET['q']
+    myFilter = PostFilter(request.GET, queryset=posts)
+    posts = myFilter.qs
 
     context = {
         'title': 'Posts',
         'posts': posts,
-        'query': str(query),
+        'myFilter': myFilter,
     }
 
     return render(request, 'posts/posts.html', context)
@@ -121,19 +120,3 @@ def post_detail(request, post_id):
     }
 
     return render(request, template, context)
-
-
-def get_blog_queryset(query=None):
-    queryset = []
-    # python install 3.9 == ['python', 'install', '3.9']
-    queries = query.split(' ')
-    for q in queries:
-        posts = Post.objects.filter(
-            Q(title__icontains=q) |
-            Q(body__icontains=q)
-        ).distinct()
-
-        for post in posts:
-            queryset.append(post)
-
-    return list(set(queryset))

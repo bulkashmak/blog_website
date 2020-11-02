@@ -290,6 +290,10 @@ input[type=text]:focus, input[type=password]:focus {
   width: 150px;
 }
 
+.search_form input {
+  background-color: white;
+}
+
 .create_button {
   background-color: white;
   border: solid 2px black;
