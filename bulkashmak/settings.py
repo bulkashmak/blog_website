@@ -80,8 +80,12 @@ WSGI_APPLICATION = 'bulkashmak.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'W4r&P34c3,1910',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
