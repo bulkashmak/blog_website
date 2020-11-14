@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = '+tt9)9ms%#g96y8kelta%4kavu^^=zfy*$(x1#9b16gdn56*a#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['178.154.225.23']
 
 
 # Application definition
@@ -81,11 +82,17 @@ WSGI_APPLICATION = 'bulkashmak.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'W4r&P34c3,1910',
-        'HOST': 'localhost',
+        'NAME': 'jeyasgmc',
+        'USER': 'jeyasgmc',
+        'PASSWORD': 'Dg4THAYEjTuX-YEGb8VIqUxi6gGd-Oe4',
+        'HOST': 'hattie.db.elephantsql.com',
         'PORT': '5432',
+        #'NAME': os.path.join('BASE_DIR', 'db.sqlite3'),
+        #'NAME': 'postgres',
+        #'USER': 'postgres',
+        #'PASSWORD': 'W4r&P34c3,1910',
+        #'HOST': 'localhost',
+        #'PORT': '5432',
     }
 }
 
